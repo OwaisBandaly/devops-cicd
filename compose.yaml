@@ -1,0 +1,9 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aws-cicd-docker-app
+    restart: unless-stopped
+    ports:
+      - "80:3000"

@@ -1,0 +1,15 @@
+{
+  "name": "aws-cicd-docker-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample Node.js app with CI/CD to AWS ECS using GitHub Actions and Docker",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test",
+    "lint": "node --check src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
