@@ -1,0 +1,149 @@
+:root {
+  --bg-1: #f6f8fc;
+  --bg-2: #dde8ff;
+  --card: #ffffff;
+  --text: #1f2a44;
+  --muted: #65708a;
+  --accent: #0f766e;
+  --accent-strong: #0a5d57;
+  --line: #d7dff1;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: linear-gradient(150deg, var(--bg-1), var(--bg-2));
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.todo-card {
+  width: min(680px, 100%);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 18px 45px rgba(31, 42, 68, 0.12);
+}
+
+.todo-header h1 {
+  margin: 4px 0;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.1rem);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.todo-form {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.todo-form input {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.todo-form button,
+.todo-footer button {
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 11px 14px;
+}
+
+.todo-form button:hover,
+.todo-footer button:hover {
+  background: var(--accent-strong);
+}
+
+.todo-list {
+  list-style: none;
+  margin: 18px 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.todo-item label {
+  word-break: break-word;
+}
+
+.todo-item.completed label {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: var(--danger);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.todo-footer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#task-count {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 520px) {
+  .todo-card {
+    padding: 18px;
+  }
+
+  .todo-form {
+    grid-template-columns: 1fr;
+  }
+}
