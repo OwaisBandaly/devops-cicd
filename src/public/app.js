@@ -18,7 +18,7 @@ form.addEventListener("submit", (event) => {
   }
 
   tasks.unshift({
-    id: crypto.randomUUID(),
+    id: createTaskId(),
     text,
     completed: false
   });
@@ -84,4 +84,15 @@ function loadTasks() {
 
 function saveTasks() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+}
+
+function createTaskId() {
+  if (
+    typeof globalThis.crypto !== "undefined" &&
+    typeof globalThis.crypto.randomUUID === "function"
+  ) {
+    return globalThis.crypto.randomUUID();
+  }
+
+  return `task-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 }
