@@ -38,5 +38,8 @@ jobs:
           script: |
             set -e
             cd "$EC2_APP_DIR"
+
+            docker-compose down
             docker-compose up -d --build
+            
             docker image prune -f
